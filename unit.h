@@ -17,6 +17,11 @@ class unit
 private:
 	int coox, cooy;
 public:
+	void get_posit(int x, int y)
+	{
+		coox=x;
+		cooy=y;
+	}
 	float acti(float a)
 	{
 		float out;

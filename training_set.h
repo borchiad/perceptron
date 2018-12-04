@@ -36,7 +36,7 @@ public:
 		}
 		ifs.close();
 		datas.push_back(data_x);
-		ifs.open("testy.txt", std::ifstream::in)
+		ifs.open("testy.txt", std::ifstream::in);
 		while(!ifs.eof())
 		{
 			getline(ifs,s2);
@@ -63,14 +63,14 @@ public:
 		int i;
 		for(i=0;i<data_x.size();i++)
 		{
-			if(datas[0][i]+datas[1][y] <= 0.1) //those are particular conditions defined during
+			if(datas[0][i]+datas[1][i] <= 0.1) //those are particular conditions defined during
 				// the creation of the dataset'
 			{
-				res.push_back(/*something meaning it's a point from class a*/)
+				res.push_back(0.1/*something meaning it's a point from class a*/);
 			}
 			else
 			{
-				res.push_back(/*something else*/)
+				res.push_back(-0.1/*something else*/);
 			}
 		}
 
