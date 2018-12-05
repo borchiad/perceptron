@@ -17,6 +17,7 @@
 
 int main()
 {
+	/////////////////////////////////////////////////
 	int inp_unit=2,i;
 	std::vector<unit> inp_lay;
 	wei w1; //this is the weights vector
@@ -24,20 +25,28 @@ int main()
 	for(i=0;i<inp_unit;i++)
 	{
 		unit temp;
+		temp.get_posit(0, i); //this assign the coordinates of the unit
 		inp_lay.push_back(temp);
 		//this for loop populates the input layer of units.
 	}
+
+	/////////////////////////////////////////////////
 	//weights initialisation
 	w1.get_weights(inp_unit);
 	mywei=w1.gib_weights();
 
 	//std::cout<<mywei[1]<<std::endl;
-
+	/////////////////////////////////////////////////
 	train train_data;
 	train_data.open_gfile();
+	std::vector<float> bias;
 	std::vector< std::vector<float> > datas=train_data.get_datas();
-
-	std::cout<<datas[0][10]<<std::endl;
+	for (i = 0; i < datas[1].size(); i++)
+	{
+		bias.push_back(1.0);
+	}
+	datas.push_back(bias); //this set a static input.
+	/////////////////////////////////////////////////
 
 	std::cin.get();
 
