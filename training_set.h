@@ -61,7 +61,8 @@ public:
 		///here you'll define the appartenance? class of each point in the training set
 		std::vector<float> res;
 		int i;
-		for(i=0;i<data_x.size();i++)
+		int j=data_x.size();
+		for(i=0;i<j;i++)
 		{
 			if(datas[0][i]+datas[1][i] <= 0.1) //those are particular conditions defined during
 				// the creation of the dataset'

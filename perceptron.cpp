@@ -5,12 +5,15 @@
  *      Author: Davidelocal
  */
 
+//Here we directly build the single layer perceptron.
+
 #include<iostream>
 #include<cmath>
 
 #include "unit.h"
 #include "training_set.h"
 #include "weights.h"
+#include "synapse.h"
 
 int main()
 {
@@ -28,7 +31,13 @@ int main()
 	w1.get_weights(inp_unit);
 	mywei=w1.gib_weights();
 
-	std::cout<<mywei[1]<<std::endl;
+	//std::cout<<mywei[1]<<std::endl;
+
+	train train_data;
+	train_data.open_gfile();
+	std::vector< std::vector<float> > datas=train_data.get_datas();
+
+	std::cout<<datas[0][10]<<std::endl;
 
 	std::cin.get();
 

@@ -23,7 +23,7 @@ public:
 	void get_weights(int num)  //takes in input the number of unit.
 	{
 		int i;
-		for(i=0;i<num;i++)
+		for(i=0;i<num+1;i++)  //the +1 is needed in order to add a bias weigth to set the threshold
 			{
 			//random initialisation of the weights
 			 weis.push_back(generator());
